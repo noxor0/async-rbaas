@@ -29,3 +29,5 @@ up                             Start Django app
 * Docker should've been used for Make actions.
 
 * Mocking async stuff was significantly harder than anticipated, will revisit
+
+* Partially built out flask branch due to originally giving into the temptation to ditch Django.
