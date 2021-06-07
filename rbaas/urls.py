@@ -3,7 +3,9 @@ from rest_framework import routers
 from rbaas.boss import views
 
 router = routers.DefaultRouter()
+router.register(r'boss/', views.BossViewSet)
 router.register(r'boss', views.BossViewSet)
+
 
 urlpatterns = [
     path('', include(router.urls)),

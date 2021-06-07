@@ -9,6 +9,6 @@ class BossViewSet(viewsets.ModelViewSet):
     queryset = Boss.objects.all()
     serializer_class = BossSerializer
 
-    def list(self, request: Request) -> List[Boss]:
-        sleep(5)
-        return super().list(request)
+    def retrieve(self, request: Request, pk: int, *args, **kwargs) -> List[Boss]:
+        sleep(5)  # We are doing some serious db work
+        return super().retrieve(request)
