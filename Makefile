@@ -1,14 +1,24 @@
 .PHONY: help
 
-install:
-	pip ins
+install:  ## Install requirements for entire app
+	virtualenv venv
+	source venv/bin/activate && pip install -e .[dev]
 
-populate_db:
-	python scripts/populate_db.py
+up: ## Start Django app
+	source venv/bin/activate && python manage.py runserver
 
-test: ## Integration test for warrior script
-	cd warrior && python -m pytest
-	cd ..
+run: ## Run the warrior app against a Django server
+	source venv/bin/activate && python warrior/main.py 'boss/1' 'boss/2' 'boss/3'
+
+populate_db: ## Populate db with some test data for tests
+	source venv/bin/activate && python manage.py migrate
+	source venv/bin/activate && python scripts/populate_db.py
+
+drop_db: ## "Drop" the db
+	rm -f db.sqlite3
+
+test: ## Integration test for warrior app
+	source venv/bin/activate && cd warrior && python -m pytest
 
 
 help: ## Print this message

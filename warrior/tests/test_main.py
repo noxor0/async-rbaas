@@ -4,11 +4,10 @@ from warrior.tests.conftest import TEST_HOST
 from warrior.main import async_query_rbaas
 
 @pytest.mark.asyncio
-@pytest.mark.integration
 @pytest.mark.usefixtures('set_test_envs')
 class TestMain():
     
-    async def test_successful_given_single_ok_request(self, mocker):
+    async def test_successful_given_single_ok_request(self):
         resource = 'boss/1'
         expected_name = 'Grumpy Boss'
 

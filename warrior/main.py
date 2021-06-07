@@ -21,8 +21,6 @@ async def async_query_rbaas(queries=[]) -> List[Tuple[str, int]]:
     async with Pool() as pool:
         async for result in pool.map(w.get_boss, queries):
             result_name, result_health = result.get('name'), int(result.get('health', -1))
-            print(result_health, result_name)
-            print(result_name, result_health)
             if result_name not in expected_values.keys():
                 failed_queries.append(f'Name not supported {result_name}')
             elif result_health != expected_values.get(result_name):

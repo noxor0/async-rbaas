@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+rbaas.egg-info/PKG-INFO
+rbaas.egg-info/SOURCES.txt
+rbaas.egg-info/dependency_links.txt
+rbaas.egg-info/requires.txt
+rbaas.egg-info/top_level.txt

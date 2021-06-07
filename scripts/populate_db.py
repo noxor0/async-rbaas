@@ -10,9 +10,9 @@ async def add_entries(payload):
 async def main():
     tasks = []
     db_entries = [
-        {'name': 'Grumpy Boss', 'health': 10},
-        {'name': 'Mean Boss', 'health': 100},
-        {'name': 'Terrifying Boss', 'health': 1000},
+        {'id': 1, 'name': 'Grumpy Boss', 'health': 10},
+        {'id': 2, 'name': 'Mean Boss', 'health': 100},
+        {'id': 3, 'name': 'Terrifying Boss', 'health': 1000},
     ]
     for entry in db_entries:
         tasks.append(asyncio.create_task(add_entries(entry)))

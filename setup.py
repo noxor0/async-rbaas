@@ -10,7 +10,6 @@ with open('README.md', 'r') as fh:
 def read_requirements(filename: str) -> List[str]:
     return pathlib.Path('requires', filename).read_text().split('\n')
 
-
 setuptools.setup(
     name='rbaas',
     version='0.0.1',
@@ -19,5 +18,5 @@ setuptools.setup(
     description='Small project to practice and learn',
     long_description=long_description,
     install_requires=read_requirements('requirements.txt'),
-    extras_requires={'dev': read_requirements('development.txt')}
+    extras_require={'dev': read_requirements('development.txt')}
 )

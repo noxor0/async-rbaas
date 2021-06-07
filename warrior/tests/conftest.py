@@ -1,6 +1,5 @@
 import os
 import pytest
-from aioresponses import aioresponses
 
 TEST_HOST = 'http://127.0.0.1:8000'
 
