@@ -7,7 +7,7 @@ from aiomultiprocess import Pool
 
 
 
-async def async_query_rbaas(queries=[]) -> List[Tuple[str, int]]:
+async def async_query_rbaas(queries: List[str]=[]) -> List[Tuple[str, int]]:
     w = Warrior(os.getenv('RBAAS_HOST', 'http://127.0.0.1:8000'))
 
     expected_values = {
